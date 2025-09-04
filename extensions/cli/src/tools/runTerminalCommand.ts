@@ -19,7 +19,7 @@ function getShellCommand(command: string): { shell: string; args: string[] } {
   } else {
     // Unix/macOS: Use login shell to source .bashrc/.zshrc etc.
     const userShell = process.env.SHELL || "/bin/bash";
-    return { shell: userShell, args: ["-l", "-c", command] };
+    return { shell: userShell, args: ["-i", "-c", command] };
   }
 }
 
